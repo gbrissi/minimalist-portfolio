@@ -2,28 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local("Inter Regular"), local("Inter-Regular"),
-    url("~typeface-inter/files/inter-latin-400.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: local("Inter Bold"), local("Inter-Bold"),
-    url("~typeface-inter/files/inter-latin-700.woff2") format("woff2");
-}
-
-body {
-  font-family: "Inter", sans-serif;
-}
-
 .animate-gradient {
   background-size: 300%;
   -webkit-animation: animatedgradient 6s ease infinite alternate;
