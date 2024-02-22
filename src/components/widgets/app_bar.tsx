@@ -31,7 +31,6 @@ function ThemeSwitcher() {
   const [enabled, setEnabled] = useState(theme === "light");
 
   const handleThemeChange = (enabled: boolean) => {
-    console.log(`Updating theme: ${enabled}`);
     setTheme(enabled ? "light" : "dark");
     setEnabled(enabled);
   };

@@ -68,7 +68,6 @@ export default function ContactForm() {
 
     setIsLoading(true);
 
-    console.log("Sending the message: ", values);
     fetch("https://formsubmit.co/gabrielrissisc@gmail.com", {
       method: "post",
       body: data,
@@ -89,8 +88,12 @@ export default function ContactForm() {
           });
         }
       })
-      .catch((err) => {
-        console.log("Unexpected form error: ", err);
+      .catch((_) => {
+        toast({
+          variant: "destructive",
+          title: "Unexpected form submission error",
+          description: "An unexpected error occurred, try again later",
+        });
       })
       .finally(() => {
         setIsLoading(false);

@@ -106,8 +106,6 @@ function SocialMediaIcon(props: { icon: IconDefinition; href: string }) {
 
 function SmallSocialMediaIcon(props: { icon: IconDefinition; href: string }) {
   const urlRedirect: string = props.href.split("/").pop()!;
-  console.log("UrlRedirect: " + urlRedirect);
-  console.log("Data: " + props.href);
 
   return (
     <Button variant="outline" className="rounded-full">
