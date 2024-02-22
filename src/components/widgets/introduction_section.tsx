@@ -89,9 +89,10 @@ function ContactMe() {
   );
 }
 
+// TODO: asChild prop is removing the outlined from the button and I haven't found a good solution yet
 function SocialMediaIcon(props: { icon: IconDefinition; href: string }) {
   return (
-    <Button asChild variant="outline" className="rounded-full w-12 h-12">
+    <Button variant="outline" className="rounded-full w-12 h-12">
       <Link
         href={props.href}
         target="blank"
@@ -109,7 +110,7 @@ function SmallSocialMediaIcon(props: { icon: IconDefinition; href: string }) {
   console.log("Data: " + props.href);
 
   return (
-    <Button asChild variant="outline" className="rounded-full">
+    <Button variant="outline" className="rounded-full">
       <Link
         href={props.href}
         target="blank"
