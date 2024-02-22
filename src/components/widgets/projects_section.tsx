@@ -1,5 +1,4 @@
-import { ReloadIcon } from "@radix-ui/react-icons";
-import { Card, Grid, Heading, Text } from "@radix-ui/themes";
+import { Card, Heading, Text } from "@radix-ui/themes";
 
 export default function ProjectsSection() {
   return (
