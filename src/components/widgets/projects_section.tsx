@@ -1,8 +1,9 @@
 import { Card, Heading, Text } from "@radix-ui/themes";
 import { useTranslation } from "react-i18next";
-
+import { useNavigate } from "react-router-dom";
 export default function ProjectsSection() {
   const { t } = useTranslation(["translation"]);
+  const navigate = useNavigate();
 
   return (
     <div className="flex gap-4 flex-col">
@@ -13,6 +14,7 @@ export default function ProjectsSection() {
           createdAt={t("calculatorProjectCreatedAt")}
           description={t("calculatorProjectDescription")}
           stack={["Flutter", "Material"]}
+        //   onClick={() => navigate("/projects/better_calculator")}
         />
         <Project
           title={t("clip2GifProjectTitle")}
@@ -48,17 +50,16 @@ interface ProjectProps {
   title: string;
   createdAt: string;
   stack: string[];
+  onClick?: () => void;
   description: string;
 }
 
 function Project(props: ProjectProps) {
   const { t } = useTranslation(["translation"]);
 
-  function openProject() {}
-
   return (
     <Card
-      onClick={openProject}
+      onClick={props.onClick}
       className="p-0 m-0 flex cursor-pointer transition-colors dark:hover:bg-slate-900 hover:bg-slate-100"
     >
       <div className="flex bg-slate-50 dark:bg-slate-950 justify-center items-center w-full h-64 mb-4">
