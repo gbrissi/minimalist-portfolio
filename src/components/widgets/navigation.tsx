@@ -4,7 +4,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { buttonVariants } from "../ui/button";
 import { useTranslation } from "react-i18next";
 
@@ -27,25 +27,16 @@ function NavigationLink(props: { href: string; children: string }) {
   const path: string = props.href;
   const isActive: boolean = pathname === path;
 
-  // const location = useLocation();
-  // const [count, setCount] = useState(0);
-
-  // useEffect(() => {
-  //   // execute on location change
-  //   setCount(count + 1);
-  //   console.log("Location changed!", location.pathname);
-  // }, [location]);
-
   return (
     <NavigationMenuItem>
-      <NavigationMenuLink
-        href={props.href}
+      <Link
+        to={props.href}
         className={buttonVariants({
           variant: isActive ? "secondary" : "ghost",
         })}
       >
         {props.children}
-      </NavigationMenuLink>
+      </Link>
     </NavigationMenuItem>
   );
 }
