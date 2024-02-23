@@ -1,11 +1,14 @@
 import { Text, Container } from "@radix-ui/themes";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
+  const { t, i18n } = useTranslation(["translation"]);
+
   return (
     <Container className="opacity-50 grow-0 py-4 ">
       <div className="flex justify-center lg:justify-start mt-12 align-center">
         <Text className="font-light" size="2">
-          Spring, 2024 — Gabriel Rissi.
+          {t("footer")}
         </Text>
       </div>
     </Container>

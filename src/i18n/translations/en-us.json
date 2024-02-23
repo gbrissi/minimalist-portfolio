@@ -1,0 +1,49 @@
+{
+  "intro": "Hello there, I'm",
+  "job": "Aspiring software engineer.",
+  
+  "descriptionStart": "Building software solutions with",
+  "descriptionEnd": "and more",
+
+  "langLabel": "Language",
+  "englishSelect": "English",
+  "portugueseSelect": "Portuguese",
+  "projectSectionLabel": "Personal Projects",
+
+  "calculatorProjectDescription": "A customizable calculator desktop app built to resolve simple mathematical arithmetical expressions that programmers often face on development.",
+  "calculatorProjectCreatedAt": "Spring 2024",
+  "calculatorProjectTitle": "BetterCalculator",
+
+  "clip2GifProjectDescription": "Trim your video, convert it to a GIF image with your preferred settings and store it locally or share it with the web.",
+  "clip2GifProjectCreatedAt": "Spring 2024",
+  "clip2GifProjectTitle": "EasyClip2Gif",
+
+  "clipProjectDescription": "Trim your video and store it locally.",
+  "clipProjectCreatedAt": "Spring 2024",
+  "clipProjectTitle": "Easy2Clip",
+
+  "freeduProjectDescription": "A collaborative question and answer application focused on Brazilian educational teaching from elementary to high school levels.",
+  "freeduProjectCreatedAt": "Winter 2023",
+  "freeduProjectTitle": "Freedu",
+
+  "contactMe": "Contact me",
+  "noPreview": "No preview.",
+  "footer": "Spring, 2024 — Gabriel Rissi.",
+  "send": "Send",
+  "loading": "Please wait...",
+
+  "nameLabel": "Name",
+  "namePh": "John Doe",
+
+  "emailLabel": "Email",
+  "emailPh": "johndoe@mail.com",
+
+  "subjectLabel": "Subject",
+  "subjectPh": "Job Offer",
+
+  "messageLabel": "Message",
+  "messagePh": "Hello there, my name is John doe...",
+
+  "developedIn": "Developed in",
+  "contactDialogDescription": "If you have any interest in sharing some information with me, don't hesitate to send me a message through this form or through my social media accounts."
+}

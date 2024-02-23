@@ -1,26 +1,29 @@
 import { Card, Heading, Text } from "@radix-ui/themes";
+import { useTranslation } from "react-i18next";
 
 export default function ProjectsSection() {
+  const { t, i18n } = useTranslation(["translation"]);
+
   return (
     <div className="flex gap-4 flex-col">
-      <Heading as="h2">Personal Projects</Heading>
+      <Heading as="h2">{t("projectSectionLabel")}</Heading>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         <Project
-          title="BetterCalculator"
-          createdAt="Spring 2024"
-          description="A customizable calculator desktop app built to resolve simple mathematical arithmetical expressions that programmers often face on development."
+          title={t("calculatorProjectTitle")}
+          createdAt={t("calculatorProjectCreatedAt")}
+          description={t("calculatorProjectDescription")}
           stack={["Flutter", "Material"]}
         />
         <Project
-          title="EasyClip2Gif"
-          createdAt="Spring 2024"
-          description="Trim your video, convert it to a GIF image with your preferred settings and store it locally or share it with the web."
+          title={t("clip2GifProjectTitle")}
+          createdAt={t("clip2GifProjectCreatedAt")}
+          description={t("clip2GifProjectDescription")}
           stack={["Flutter", "Material"]}
         />
         <Project
-          title="Freedu"
-          createdAt="Winter 2023"
-          description="A collaborative question and answer application focused on Brazilian educational teaching from elementary to high school levels."
+          title={t("freeduProjectTitle")}
+          createdAt={t("freeduProjectCreatedAt")}
+          description={t("freeduProjectDescription")}
           stack={[
             "Flutter",
             "Material",
@@ -31,9 +34,9 @@ export default function ProjectsSection() {
           ]}
         />
         <Project
-          title="Easy2Clip"
-          createdAt="Spring 2024"
-          description="Trim your video and store it locally."
+          title={t("clipProjectTitle")}
+          createdAt={t("clipProjectCreatedAt")}
+          description={t("clipProjectDescription")}
           stack={["Flutter", "Material"]}
         />
       </div>
@@ -49,6 +52,8 @@ interface ProjectProps {
 }
 
 function Project(props: ProjectProps) {
+  const { t, i18n } = useTranslation(["translation"]);
+
   function openProject() {}
 
   return (
@@ -58,7 +63,7 @@ function Project(props: ProjectProps) {
     >
       <div className="flex bg-slate-50 dark:bg-slate-950 justify-center items-center w-full h-64 mb-4">
         {/* <ReloadIcon className="mr-2 h-4 w-4 animate-spin" /> */}
-        <Text className="text-light text-sm opacity-80">No preview.</Text>
+        <Text className="text-light text-sm opacity-80">{t("noPreview")}</Text>
       </div>
       <div className="p-4">
         <div className="mb-4">
@@ -72,7 +77,7 @@ function Project(props: ProjectProps) {
         </div>
         <div className="flex justify-start items-end">
           <Text className="font-light text-sm opacity-80 text-end">
-            Developed in {props.createdAt}
+            {`${t("developedIn")} ${props.createdAt}`}
           </Text>
         </div>
       </div>

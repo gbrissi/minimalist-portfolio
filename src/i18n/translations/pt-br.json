@@ -1,0 +1,49 @@
+{
+  "intro": "Olá, meu nome é",
+  "job": "Estudante em desenvolvimento de software.",
+
+  "descriptionStart": "Criando soluções de software com",
+  "descriptionEnd": "e mais",
+
+  "langLabel": "Idioma",
+  "englishSelect": "Inglês",
+  "portugueseSelect": "Português",
+  "projectSectionLabel": "Projetos pessoais",
+
+  "calculatorProjectDescription": "Um aplicativo de calculadora personalizável para desktop criado para resolver expressões aritméticas matemáticas simples que os programadores costumam enfrentar no desenvolvimento.",
+  "calculatorProjectCreatedAt": "Verão de 2024",
+  "calculatorProjectTitle": "BetterCalculator",
+
+  "clip2GifProjectDescription": "Corte seu vídeo, converta-o em uma imagem GIF com suas configurações preferidas e armazene-o localmente ou compartilhe-o na web.",
+  "clip2GifProjectCreatedAt": "Verão de 2024",
+  "clip2GifProjectTitle": "EasyClip2Gif",
+
+  "clipProjectDescription": "Corte seu vídeo e armazene-o localmente.",
+  "clipProjectCreatedAt": "Verão de 2024",
+  "clipProjectTitle": "Easy2Clip",
+
+  "freeduProjectDescription": "Um aplicativo colaborativo de perguntas e respostas focado no ensino didático brasileiro do ensino fundamental ao médio.",
+  "freeduProjectCreatedAt": "Inverno de 2023",
+  "freeduProjectTitle": "Freedu",
+
+  "contactMe": "Entre em contato",
+  "noPreview": "Sem visualização prévia.",
+  "footer": "Verão de 2024 — Gabriel Rissi.",
+  "send": "Enviar",
+  "loading": "Aguarde um momento...",
+
+  "nameLabel": "Nome",
+  "namePh": "Lucas da Silva",
+
+  "emailLabel": "Email",
+  "emailPh": "lucasdasilva@mail.com",
+
+  "subjectLabel": "Assunto",
+  "subjectPh": "Entrevista de emprego",
+
+  "messageLabel": "Mensagem",
+  "messagePh": "Bom dia, o meu nome é Lucas da Silva...",
+
+  "developedIn": "Desenvolvido no",
+  "contactDialogDescription": "Se você tiver algum interesse em compartilhar alguma informação comigo, não hesite em me enviar uma mensagem através deste formulário ou através das minhas contas nas redes sociais"
+}

@@ -16,6 +16,7 @@ import {
 import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const contactFormSchema = z.object({
   name: z
@@ -46,6 +47,7 @@ const contactFormSchema = z.object({
 });
 
 export default function ContactForm() {
+  const { t, i18n } = useTranslation(["translation"]);
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
@@ -105,27 +107,27 @@ export default function ContactForm() {
       <form onSubmit={contactForm.handleSubmit(onSubmit)} className="space-y-8">
         <div className="flex gap-2">
           <FormInput
-            label="Name"
-            placeholder="John Doe"
+            label={t("nameLabel")}
+            placeholder={t("namePh")}
             name="name"
             control={contactForm.control}
           />
           <FormInput
-            label="Email"
-            placeholder="johndoe@mail.com"
+            label={t("emailLabel")}
+            placeholder={t("emailPh")}
             name="email"
             control={contactForm.control}
           />
         </div>
         <FormInput
-          label="Subject"
-          placeholder="Job Offer"
+          label={t("subjectLabel")}
+          placeholder={t("subjectPh")}
           name="subject"
           control={contactForm.control}
         />
         <FormTextarea
-          label="Message"
-          placeholder="Hello there, my name is John doe..."
+          label={t("messageLabel")}
+          placeholder={t("messagePh")}
           name="message"
           control={contactForm.control}
         />
@@ -138,14 +140,17 @@ export default function ContactForm() {
 }
 
 function SubmitButton() {
-  return <Button type="submit">Send</Button>;
+  const { t, i18n } = useTranslation(["translation"]);
+  return <Button type="submit">{t("send")}</Button>;
 }
 
 function ButtonLoading() {
+  const { t, i18n } = useTranslation(["translation"]);
+
   return (
     <Button disabled>
       <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
-      Please wait
+      {t("loading")}
     </Button>
   );
 }
