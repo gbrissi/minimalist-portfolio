@@ -6,6 +6,7 @@ import "./index.css";
 import { Theme } from "@radix-ui/themes";
 import "./i18n/i18n.ts";
 import { Toaster } from "./components/ui/toaster.tsx";
+import { Analytics } from "@vercel/analytics/react";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -13,5 +14,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       <App />
       <Toaster />
     </Theme>
+    <Analytics />
   </React.StrictMode>
 );
