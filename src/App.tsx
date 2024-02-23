@@ -120,12 +120,15 @@ interface ProjectViewProps {
 // title, image, description, installation guide, stack, preview button, source code view
 
 function BetterCalculator() {
+  const { t } = useTranslation(["translation"]);
+
   return (
     <ProjectView
       title="BetterCalculator"
       imageUrl="https://raw.githubusercontent.com/gbrissi/better_calculator/main/preview/preview_app.gif"
       description={
         <Trans
+          t={t}
           i18nKey="betterCalculatorDescription"
           components={{
             Anchor: (
@@ -143,6 +146,7 @@ function BetterCalculator() {
       }
       installation={
         <Trans
+          t={t}
           i18nKey="betterCalculatorInstallation"
           components={{
             Anchor: (

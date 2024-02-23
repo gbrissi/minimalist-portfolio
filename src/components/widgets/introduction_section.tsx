@@ -25,6 +25,7 @@ export default function IntroductionSection() {
     <div className="flex flex-col gap-3 mt-12 mb-24">
       <Heading size="8">
         <Trans
+        t={t}
           i18nKey="intro"
           components={{
             Gradient: <TextGradient>TextData</TextGradient>,
