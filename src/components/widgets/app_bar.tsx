@@ -56,7 +56,7 @@ function ThemeSwitcher() {
 
 function LangSwitcher() {
   const { t, i18n } = useTranslation(["translation"]);
-  const [lang, setLang] = useLocalStorage("lang", i18n.language);
+  const [_, setLang] = useLocalStorage("lang", i18n.language);
 
   const onClickLanguageChange = (lang: string) => {
     setLang(lang);

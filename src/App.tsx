@@ -8,7 +8,7 @@ import i18n from "./i18n/i18n";
 import { useLocalStorage } from "usehooks-ts";
 
 export default function App() {
-  const [lang, setLang] = useLocalStorage("lang", i18n.language);
+  const [lang, _] = useLocalStorage("lang", i18n.language);
 
   useEffect(() => {
     i18n.changeLanguage(lang);

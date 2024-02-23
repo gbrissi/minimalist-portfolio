@@ -2,7 +2,7 @@ import { Card, Heading, Text } from "@radix-ui/themes";
 import { useTranslation } from "react-i18next";
 
 export default function ProjectsSection() {
-  const { t, i18n } = useTranslation(["translation"]);
+  const { t } = useTranslation(["translation"]);
 
   return (
     <div className="flex gap-4 flex-col">
@@ -52,7 +52,7 @@ interface ProjectProps {
 }
 
 function Project(props: ProjectProps) {
-  const { t, i18n } = useTranslation(["translation"]);
+  const { t } = useTranslation(["translation"]);
 
   function openProject() {}
 

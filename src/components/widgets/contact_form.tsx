@@ -47,7 +47,7 @@ const contactFormSchema = z.object({
 });
 
 export default function ContactForm() {
-  const { t, i18n } = useTranslation(["translation"]);
+  const { t } = useTranslation(["translation"]);
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
@@ -140,12 +140,12 @@ export default function ContactForm() {
 }
 
 function SubmitButton() {
-  const { t, i18n } = useTranslation(["translation"]);
+  const { t } = useTranslation(["translation"]);
   return <Button type="submit">{t("send")}</Button>;
 }
 
 function ButtonLoading() {
-  const { t, i18n } = useTranslation(["translation"]);
+  const { t } = useTranslation(["translation"]);
 
   return (
     <Button disabled>

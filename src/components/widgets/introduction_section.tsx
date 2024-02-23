@@ -19,7 +19,7 @@ import ContactForm from "./contact_form";
 import { useTranslation } from "react-i18next";
 
 export default function IntroductionSection() {
-  const { t, i18n } = useTranslation(["translation"]);
+  const { t } = useTranslation(["translation"]);
 
   return (
     <div className="flex flex-col gap-3 mt-12 mb-24">
@@ -29,7 +29,8 @@ export default function IntroductionSection() {
       <Container>
         <Text size="5" className="font-light">
           {t("descriptionStart")} <StackName>Next.js</StackName>,{" "}
-          <StackName>Flutter</StackName>, <StackName>React</StackName> {t("descriptionEnd")}!
+          <StackName>Flutter</StackName>, <StackName>React</StackName>{" "}
+          {t("descriptionEnd")}!
           <br />
           {t("job")}
         </Text>
@@ -51,7 +52,7 @@ function StackName(props: { children: string }) {
 }
 
 function ContactMe() {
-  const { t, i18n } = useTranslation(["translation"]);
+  const { t } = useTranslation(["translation"]);
 
   return (
     <Dialog>
