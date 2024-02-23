@@ -14,18 +14,20 @@ export default function ProjectsSection() {
           createdAt={t("calculatorProjectCreatedAt")}
           description={t("calculatorProjectDescription")}
           stack={["Flutter", "Material"]}
-        //   onClick={() => navigate("/projects/better_calculator")}
+          onClick={() => navigate("/projects/better_calculator")}
         />
         <Project
           title={t("clip2GifProjectTitle")}
           createdAt={t("clip2GifProjectCreatedAt")}
           description={t("clip2GifProjectDescription")}
           stack={["Flutter", "Material"]}
+          onClick={() => navigate("/projects/easy_clip_2_gif")}
         />
         <Project
           title={t("freeduProjectTitle")}
           createdAt={t("freeduProjectCreatedAt")}
           description={t("freeduProjectDescription")}
+          onClick={() => navigate("/projects/freedu")}
           stack={[
             "Flutter",
             "Material",
@@ -39,6 +41,7 @@ export default function ProjectsSection() {
           title={t("clipProjectTitle")}
           createdAt={t("clipProjectCreatedAt")}
           description={t("clipProjectDescription")}
+          onClick={() => navigate("/projects/easy_2_clip")}
           stack={["Flutter", "Material"]}
         />
       </div>

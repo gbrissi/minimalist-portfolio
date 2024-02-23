@@ -5,6 +5,11 @@
   "descriptionStart": "Criando soluções de software com",
   "descriptionEnd": "e mais",
 
+  "pageNotFoundError": "404 - Página não encontrada",
+  "pageNotFoundDescription": "A página que você está tentando acessar não existe ou não está mais disponível",
+  "checkUrl": "Por favor, certifique-se de que o URL esteja correto, caso contrário, notifique o desenvolvedor do site sobre o erro.",
+  "goBackHome": "Voltar para a página inicial",
+
   "langLabel": "Idioma",
   "englishSelect": "Inglês",
   "portugueseSelect": "Português",

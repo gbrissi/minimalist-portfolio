@@ -12,12 +12,13 @@ import {
   Routes,
   Navigate,
   Outlet,
-  useNavigate,
   Link,
 } from "react-router-dom";
 import { Button } from "./components/ui/button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { useTranslation } from "react-i18next";
+import BackButton from "./components/widgets/back_button";
 
 export default function App() {
   const [lang, _] = useLocalStorage("lang", i18n.language);
@@ -35,10 +36,10 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Outlet />}>
             <Route index element={<Navigate to="/" replace />} />
-            <Route
-              path="better_calculator"
-              element={<BetterCalculatorView />}
-            />
+            <Route path="easy_2_clip" element={<Easy2ClipView />} />{" "}
+            <Route path="easy_clip_2_gif" element={<EasyClip2GIFView />} />{" "}
+            <Route path="freedu" element={<FreeduView />} />{" "}
+            <Route path="better_calculator" element={<BetterCalculator />} />
           </Route>
         </Routes>
       </BrowserRouter>
@@ -48,36 +49,22 @@ export default function App() {
 }
 
 function NotFound() {
-  const navigate = useNavigate();
+  const { t } = useTranslation(["translation"]);
 
   return (
     <Container>
       <div className="flex flex-col gap-4">
-        <Button
-          variant="ghost"
-          className="rounded-full w-16 h-16"
-          onClick={() => navigate(-1)}
-        >
-          <FontAwesomeIcon
-            icon={faArrowLeft}
-            size="xl"
-            className="opacity-80 hover:opacity-100"
-          />
-        </Button>
-
-        <Heading className="text-4xl">404 - Page not found</Heading>
+        <BackButton />
+        <Heading className="text-4xl">{t("pageNotFoundError")}</Heading>
         <Text className="text-lg font-light opacity-80">
-          The page that you are trying to access doesn't exists or it's not
-          available any longer <br />
-          Please, make sure the URL is correct, otherwise, notify the website
-          developer about the error
+          {t("pageNotFoundDescription")} <br />
+          {t("checkUrl")}
         </Text>
-
         <Button asChild variant="default" className="px-4 w-min rounded-full">
           <Link to={"/"}>
             <Flex className="gap-4 justify-center items-center">
               <FontAwesomeIcon icon={faChevronRight} />
-              <Text className="text-lg font-light">Go back home</Text>
+              <Text className="text-lg font-light">{t("goBackHome")}</Text>
             </Flex>
           </Link>
         </Button>
@@ -95,6 +82,33 @@ function Home() {
   );
 }
 
-function BetterCalculatorView() {
-  return <Heading>Project View</Heading>;
+function BetterCalculator() {
+  return <ProjectView title="BetterCalculator" />;
+}
+
+function EasyClip2GIFView() {
+  return <ProjectView title="EasyClip2GIF" />;
+}
+function Easy2ClipView() {
+  return <ProjectView title="Easy2Clip" />;
+}
+function FreeduView() {
+  return <ProjectView title="Freedu" />;
+}
+
+interface ProjectViewProps {
+  title: string;
+  // children?: string;
+}
+
+function ProjectView(props: ProjectViewProps) {
+  return (
+    <Container>
+      <div className="flex flex-col gap-4">
+        <BackButton />
+        <Heading>{props.title}</Heading>
+        <Text>Coming soon...</Text>
+      </div>
+    </Container>
+  );
 }

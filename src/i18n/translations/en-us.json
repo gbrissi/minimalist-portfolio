@@ -1,9 +1,14 @@
 {
   "intro": "Hello there, I'm",
   "job": "Aspiring software engineer.",
-  
+
   "descriptionStart": "Building software solutions with",
   "descriptionEnd": "and more",
+
+  "pageNotFoundError": "404 - Page Not Found",
+  "pageNotFoundDescription": "The page that you are trying to access doesn't exists or it's not available any longer",
+  "checkUrl": "Please, make sure the URL is correct, otherwise, notify the website developer about the error",
+  "goBackHome": "Go back home",
 
   "langLabel": "Language",
   "englishSelect": "English",
