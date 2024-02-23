@@ -40,7 +40,7 @@ export default function App() {
         <Routes>
           <Route path="*" element={<NotFound />} />
           <Route path="/" element={<Home />} />
-          <Route path="/about_me" element={<AboutMe />} />
+          <Route path="/about-me" element={<AboutMe />} />
           <Route path="/projects" element={<Outlet />}>
             <Route index element={<Navigate to="/" replace />} />
             <Route path="easy_2_clip" element={<Easy2ClipView />} />{" "}
@@ -129,7 +129,11 @@ function BetterCalculator() {
           i18nKey="betterCalculatorDescription"
           components={{
             Anchor: (
-              <Anchor href="https://flutter.dev" target="_blank">
+              <Anchor
+                href="https://flutter.dev"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Github Link
               </Anchor>
             ),
@@ -145,6 +149,7 @@ function BetterCalculator() {
               <Anchor
                 href="https://github.com/gbrissi/better_calculator/releases"
                 target="_blank"
+                rel="noreferrer"
               >
                 Github Link
               </Anchor>
@@ -214,7 +219,11 @@ function ProjectView(props: ProjectViewProps) {
         </div>
         <div className="flex flex-row gap-2">
           <Button asChild variant="outline" className="rounded-full w-min">
-            <Anchor href="https://bettercalculator.rissi.dev" target="_blank">
+            <Anchor
+              href="https://bettercalculator.rissi.dev"
+              target="_blank"
+              rel="noreferrer"
+            >
               <div className="flex flex-row gap-2 justify-center items-center">
                 <FontAwesomeIcon icon={faEye} />
                 <Text>{t("projectPreviewBtn")}</Text>
@@ -222,7 +231,11 @@ function ProjectView(props: ProjectViewProps) {
             </Anchor>
           </Button>
           <Button asChild variant="secondary" className="rounded-full w-min">
-            <Anchor href="https://www.google.com" target="_blank">
+            <Anchor
+              href="https://www.google.com"
+              target="_blank"
+              rel="noreferrer"
+            >
               <div className="flex flex-row gap-2 justify-center items-center">
                 <FontAwesomeIcon icon={faGitAlt} />
                 <Text>{t("projectSourceCodeBtn")}</Text>

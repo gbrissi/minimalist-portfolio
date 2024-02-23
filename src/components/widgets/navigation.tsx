@@ -14,7 +14,7 @@ export default function Navigation() {
     <NavigationMenu>
       <NavigationMenuList className="gap-2">
         <NavigationLink href="/">Home</NavigationLink>
-        <NavigationLink href="/about_me">{t("aboutMe")}</NavigationLink>
+        <NavigationLink href="/about-me">{t("aboutMe")}</NavigationLink>
       </NavigationMenuList>
     </NavigationMenu>
   );

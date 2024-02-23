@@ -104,6 +104,7 @@ function SocialMediaIcon(props: { icon: IconDefinition; href: string }) {
       <Link
         href={props.href}
         target="_blank"
+        rel="noreferrer"
         className="opacity-80 hover:opacity-100 dark:text-slate-50 text-slate-900"
       >
         <FontAwesomeIcon icon={props.icon} size="2x" />
@@ -120,6 +121,7 @@ function SmallSocialMediaIcon(props: { icon: IconDefinition; href: string }) {
       <Link
         href={props.href}
         target="_blank"
+        rel="noreferrer"
         className="cursor-pointer opacity-80 hover:opacity-100 dark:text-slate-50 text-slate-900"
       >
         <Flex justify="center" align="center">
