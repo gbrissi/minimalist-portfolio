@@ -29,11 +29,12 @@ export default function App() {
 
   return (
     <Flex direction="column" className="min-h-screen px-8 xl:px-4">
-      <Appbar />
       <BrowserRouter>
+        <Appbar />
         <Routes>
           <Route path="*" element={<NotFound />} />
           <Route path="/" element={<Home />} />
+          <Route path="/about_me" element={<AboutMe />} />
           <Route path="/projects" element={<Outlet />}>
             <Route index element={<Navigate to="/" replace />} />
             <Route path="easy_2_clip" element={<Easy2ClipView />} />{" "}
@@ -42,8 +43,8 @@ export default function App() {
             <Route path="better_calculator" element={<BetterCalculator />} />
           </Route>
         </Routes>
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </Flex>
   );
 }
@@ -79,6 +80,13 @@ function Home() {
       <IntroductionSection />
       <ProjectsSection />
     </Container>
+  );
+}
+
+function AboutMe() {
+  return (
+    // TODO: Temporary only.
+    <ProjectView title="About me" />
   );
 }
 

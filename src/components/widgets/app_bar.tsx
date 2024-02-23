@@ -14,12 +14,14 @@ import {
 } from "../ui/dropdown-menu";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { useTranslation } from "react-i18next";
+import Navigation from "./navigation";
 
 export default function Appbar() {
   return (
     <>
       <Container className="p-4 grow-0">
-        <Flex justify="end" className="gap-4">
+        <Flex className="gap-4 justify-end">
+          <Navigation />
           <LangSwitcher />
           <ThemeSwitcher />
         </Flex>
