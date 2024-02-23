@@ -3,7 +3,7 @@ import Footer from "./components/widgets/footer";
 import IntroductionSection from "./components/widgets/introduction_section";
 import { Container, Flex, Heading, Text } from "@radix-ui/themes";
 import ProjectsSection from "./components/widgets/projects_section";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import i18n from "./i18n/i18n";
 import { useLocalStorage } from "usehooks-ts";
 import {
@@ -15,10 +15,16 @@ import {
   Link,
 } from "react-router-dom";
 import { Button } from "./components/ui/button";
+import { Link as Anchor } from "@radix-ui/themes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import { useTranslation } from "react-i18next";
+import { faChevronRight, faEye } from "@fortawesome/free-solid-svg-icons";
+import { Trans, useTranslation } from "react-i18next";
 import BackButton from "./components/widgets/back_button";
+import {
+  FlutterSVG,
+  MaterialDesignSVG,
+} from "./components/widgets/stack_icons";
+import { faGitAlt } from "@fortawesome/free-brands-svg-icons";
 
 export default function App() {
   const [lang, _] = useLocalStorage("lang", i18n.language);
@@ -86,36 +92,144 @@ function Home() {
 function AboutMe() {
   return (
     // TODO: Temporary only.
-    <ProjectView title="About me" />
+    <NewPagePlaceholder title="About me" />
   );
 }
 
-function BetterCalculator() {
-  return <ProjectView title="BetterCalculator" />;
-}
-
 function EasyClip2GIFView() {
-  return <ProjectView title="EasyClip2GIF" />;
+  return <NewPagePlaceholder title="EasyClip2Gif" />;
 }
 function Easy2ClipView() {
-  return <ProjectView title="Easy2Clip" />;
+  return <NewPagePlaceholder title="Easy2Clip" />;
 }
 function FreeduView() {
-  return <ProjectView title="Freedu" />;
+  return <NewPagePlaceholder title="Freedu" />;
 }
+
+// TODO: element that can use hyperlinks, bold and italic elements.
+type CustomText = React.ReactNode;
 
 interface ProjectViewProps {
   title: string;
-  // children?: string;
+  imageUrl?: string;
+  description: CustomText;
+  installation: CustomText; // element that can use hyperlinks, bold and italic elements
+  stack: React.ReactNode[];
 }
 
-function ProjectView(props: ProjectViewProps) {
+// title, image, description, installation guide, stack, preview button, source code view
+
+function BetterCalculator() {
+  return (
+    <ProjectView
+      title="BetterCalculator"
+      imageUrl="https://raw.githubusercontent.com/gbrissi/better_calculator/main/preview/preview_app.gif"
+      description={
+        <Trans
+          i18nKey="betterCalculatorDescription"
+          components={{
+            Anchor: (
+              <Anchor href="https://flutter.dev" target="_blank">
+                Github Link
+              </Anchor>
+            ),
+            Text: <Text>Text data</Text>,
+          }}
+        />
+      }
+      installation={
+        <Trans
+          i18nKey="betterCalculatorInstallation"
+          components={{
+            Anchor: (
+              <Anchor
+                href="https://github.com/gbrissi/better_calculator/releases"
+                target="_blank"
+              >
+                Github Link
+              </Anchor>
+            ),
+            Text: <Text>Text data</Text>,
+          }}
+        />
+      }
+      stack={[
+        <MaterialDesignSVG className="w-8 h-8 fill-slate-950 dark:fill-slate-50" />,
+        <FlutterSVG className="w-8 h-8 fill-slate-950 dark:fill-slate-50" />,
+      ]}
+    />
+  );
+}
+
+function NewPagePlaceholder(props: { title: string }) {
   return (
     <Container>
       <div className="flex flex-col gap-4">
         <BackButton />
-        <Heading>{props.title}</Heading>
-        <Text>Coming soon...</Text>
+        <Heading size="8">{props.title}</Heading>
+        <Text className="text-lg">Coming soon...</Text>
+      </div>
+    </Container>
+  );
+}
+
+function ProjectView(props: ProjectViewProps) {
+  const { t } = useTranslation(["translation"]);
+
+  return (
+    <Container>
+      <div className="flex flex-col gap-4">
+        <BackButton />
+        <div className="flex flex-row gap-4">
+          <Heading size="8">{props.title}</Heading>
+          <div className="flex flex-row gap-2 items-end">
+            <Text className="text-sm font-light opacity-80">
+              {t("projectPoweredBy")}
+            </Text>
+            <div className="flex flex-row gap-2">
+              {props.stack.map((item, index) => (
+                <div key={index}>{item}</div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="my-4 flex flex-col gap-4">
+          {props.imageUrl != null && (
+            <div className="w-full mt-2 mb-4">
+              <img src={props.imageUrl} />
+            </div>
+          )}
+          <div className="flex flex-col gap-2">
+            <Text className="text-2xl font-medium">
+              {t("projectDescription")}
+            </Text>
+            <Text className="text-lg">{props.description}</Text>
+          </div>
+          <div className="flex flex-col gap-2">
+            <Text className="text-2xl font-medium">
+              {t("projectInstallation")}
+            </Text>
+            <Text className="text-lg">{props.installation}</Text>
+          </div>{" "}
+        </div>
+        <div className="flex flex-row gap-2">
+          <Button asChild variant="outline" className="rounded-full w-min">
+            <Anchor href="https://bettercalculator.rissi.dev" target="_blank">
+              <div className="flex flex-row gap-2 justify-center items-center">
+                <FontAwesomeIcon icon={faEye} />
+                <Text>{t("projectPreviewBtn")}</Text>
+              </div>
+            </Anchor>
+          </Button>
+          <Button asChild variant="secondary" className="rounded-full w-min">
+            <Anchor href="https://www.google.com" target="_blank">
+              <div className="flex flex-row gap-2 justify-center items-center">
+                <FontAwesomeIcon icon={faGitAlt} />
+                <Text>{t("projectSourceCodeBtn")}</Text>
+              </div>
+            </Anchor>
+          </Button>
+        </div>
       </div>
     </Container>
   );

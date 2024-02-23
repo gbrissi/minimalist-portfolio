@@ -1,5 +1,5 @@
 {
-  "intro": "Olá, meu nome é",
+  "intro": "Olá, meu nome é <Gradient>Gabriel</Gradient>",
   "job": "Estudante em desenvolvimento de software.",
 
   "descriptionStart": "Criando soluções de software com",
@@ -37,6 +37,8 @@
   "send": "Enviar",
   "loading": "Aguarde um momento...",
 
+  "aboutMe": "Sobre mim",
+
   "nameLabel": "Nome",
   "namePh": "Lucas da Silva",
 
@@ -50,5 +52,14 @@
   "messagePh": "Bom dia, o meu nome é Lucas da Silva...",
 
   "developedIn": "Desenvolvido no",
-  "contactDialogDescription": "Se você tiver algum interesse em compartilhar alguma informação comigo, não hesite em me enviar uma mensagem através deste formulário ou através das minhas contas nas redes sociais"
+  "contactDialogDescription": "Se você tiver algum interesse em compartilhar alguma informação comigo, não hesite em me enviar uma mensagem através deste formulário ou através das minhas contas nas redes sociais",
+
+  "projectPoweredBy": "Construído c/",
+  "projectDescription": "Descrição",
+  "projectInstallation": "Instalação",
+  "projectPreviewBtn": "Pré-visualização",
+  "projectSourceCodeBtn": "Código fonte",
+
+  "betterCalculatorDescription": "<Text>BetterCalculator é um aplicativo de calculadora simples desenvolvido com <Anchor>Flutter</Anchor>, permitindo aos usuários realizar operações aritméticas básicas com números.</Text>",
+  "betterCalculatorInstallation": "<Text> Você pode instalar o aplicativo BetterCalculator acessando o <Anchor>Github Releases</Anchor>.</Text>"
 }

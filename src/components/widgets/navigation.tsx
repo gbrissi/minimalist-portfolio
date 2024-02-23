@@ -6,13 +6,16 @@ import {
 } from "@/components/ui/navigation-menu";
 import { useLocation } from "react-router-dom";
 import { buttonVariants } from "../ui/button";
+import { useTranslation } from "react-i18next";
 
 export default function Navigation() {
+  const { t } = useTranslation(["translation"]);
+
   return (
     <NavigationMenu>
       <NavigationMenuList className="gap-2">
         <NavigationLink href="/">Home</NavigationLink>
-        <NavigationLink href="/about_me">About me</NavigationLink>
+        <NavigationLink href="/about_me">{t("aboutMe")}</NavigationLink>
       </NavigationMenuList>
     </NavigationMenu>
   );

@@ -16,7 +16,7 @@ import {
   DialogTrigger,
 } from "../ui/dialog";
 import ContactForm from "./contact_form";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 
 export default function IntroductionSection() {
   const { t } = useTranslation(["translation"]);
@@ -24,7 +24,13 @@ export default function IntroductionSection() {
   return (
     <div className="flex flex-col gap-3 mt-12 mb-24">
       <Heading size="8">
-        {t("intro")} <TextGradient>Gabriel</TextGradient>.
+        <Trans
+          i18nKey="intro"
+          components={{
+            Gradient: <TextGradient>TextData</TextGradient>,
+          }}
+        />
+        .
       </Heading>
       <Container>
         <Text size="5" className="font-light">
@@ -97,7 +103,7 @@ function SocialMediaIcon(props: { icon: IconDefinition; href: string }) {
     <Button variant="outline" className="rounded-full w-12 h-12">
       <Link
         href={props.href}
-        target="blank"
+        target="_blank"
         className="opacity-80 hover:opacity-100 dark:text-slate-50 text-slate-900"
       >
         <FontAwesomeIcon icon={props.icon} size="2x" />
@@ -113,7 +119,7 @@ function SmallSocialMediaIcon(props: { icon: IconDefinition; href: string }) {
     <Button variant="outline" className="rounded-full">
       <Link
         href={props.href}
-        target="blank"
+        target="_blank"
         className="cursor-pointer opacity-80 hover:opacity-100 dark:text-slate-50 text-slate-900"
       >
         <Flex justify="center" align="center">

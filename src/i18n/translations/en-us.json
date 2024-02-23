@@ -1,5 +1,5 @@
 {
-  "intro": "Hello there, I'm",
+  "intro": "Hello there, I'm <Gradient>Gabriel</Gradient>",
   "job": "Aspiring software engineer.",
 
   "descriptionStart": "Building software solutions with",
@@ -9,6 +9,8 @@
   "pageNotFoundDescription": "The page that you are trying to access doesn't exists or it's not available any longer",
   "checkUrl": "Please, make sure the URL is correct, otherwise, notify the website developer about the error",
   "goBackHome": "Go back home",
+
+  "aboutMe": "About me",
 
   "langLabel": "Language",
   "englishSelect": "English",
@@ -50,5 +52,14 @@
   "messagePh": "Hello there, my name is John doe...",
 
   "developedIn": "Developed in",
-  "contactDialogDescription": "If you have any interest in sharing some information with me, don't hesitate to send me a message through this form or through my social media accounts."
+  "contactDialogDescription": "If you have any interest in sharing some information with me, don't hesitate to send me a message through this form or through my social media accounts.",
+
+  "projectPoweredBy": "Crafted w/",
+  "projectDescription": "Description",
+  "projectInstallation": "Installation",
+  "projectPreviewBtn": "Preview",
+  "projectSourceCodeBtn": "Source Code",
+
+  "betterCalculatorDescription": "<Text>The BetterCalculator is a simple calculator application built with <Anchor>Flutter</Anchor>, allowing users to perform basic arithmetic operations on numbers.</Text>",
+  "betterCalculatorInstallation": "<Text> You can install the BetterCalculator app by accessing the <Anchor>GitHub Releases</Anchor> section.</Text>"
 }
