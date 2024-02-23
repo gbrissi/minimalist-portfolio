@@ -112,6 +112,8 @@ type CustomText = React.ReactNode;
 interface ProjectViewProps {
   title: string;
   imageUrl?: string;
+  websitePreview: string;
+  sourceCodeUrl: string;
   description: CustomText;
   installation: CustomText; // element that can use hyperlinks, bold and italic elements
   stack: React.ReactNode[];
@@ -124,6 +126,8 @@ function BetterCalculator() {
 
   return (
     <ProjectView
+      sourceCodeUrl="https://www.github.com/gbrissi/better_calculator"
+      websitePreview="https://bettercalculator.rissi.dev"
       title="BetterCalculator"
       imageUrl="https://raw.githubusercontent.com/gbrissi/better_calculator/main/preview/preview_app.gif"
       description={
@@ -224,7 +228,7 @@ function ProjectView(props: ProjectViewProps) {
         <div className="flex flex-row gap-2">
           <Button asChild variant="outline" className="rounded-full w-min">
             <Anchor
-              href="https://bettercalculator.rissi.dev"
+              href={props.websitePreview}
               target="_blank"
               rel="noreferrer"
             >
@@ -235,11 +239,7 @@ function ProjectView(props: ProjectViewProps) {
             </Anchor>
           </Button>
           <Button asChild variant="secondary" className="rounded-full w-min">
-            <Anchor
-              href="https://www.google.com"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <Anchor href={props.sourceCodeUrl} target="_blank" rel="noreferrer">
               <div className="flex flex-row gap-2 justify-center items-center">
                 <FontAwesomeIcon icon={faGitAlt} />
                 <Text>{t("projectSourceCodeBtn")}</Text>
